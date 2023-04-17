@@ -172,7 +172,7 @@
                 <Parameter Id="%AID%_UP-%T%%CCC%022" Name="f%C%E1HighDpt9"     ParameterType="%AID%_PT-ValueDpt9"         Offset="4"  BitOffset="0" Text="Bis-Wert" Value="670760" />
                 <Parameter Id="%AID%_UP-%T%%CCC%322" Name="f%C%E1LowDpt9Fix"   ParameterType="%AID%_PT-ValueDpt9"         Offset="0"  BitOffset="0" Text="Eingang 1 ist konstant" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%405" Name="f%C%E1LowDpt12"     ParameterType="%AID%_PT-ValueDpt12"        Offset="0"  BitOffset="0" Text="Von-Wert" Value="2147483648" />
-                <Parameter Id="%AID%_UP-%T%%CCC%406" Name="f%C%E1HighDpt12"    ParameterType="%AID%_PT-ValueDpt12"        Offset="4"  BitOffset="0" Text="Bis-Wert" Value="4294967296" />
+                <Parameter Id="%AID%_UP-%T%%CCC%406" Name="f%C%E1HighDpt12"    ParameterType="%AID%_PT-ValueDpt12"        Offset="4"  BitOffset="0" Text="Bis-Wert" Value="4294967295" />
                 <Parameter Id="%AID%_UP-%T%%CCC%407" Name="f%C%E1LowDpt12Fix"  ParameterType="%AID%_PT-ValueDpt12"        Offset="0"  BitOffset="0" Text="Eingang 1 ist konstant" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%408" Name="f%C%E1LowDpt13"     ParameterType="%AID%_PT-ValueDpt13"        Offset="0"  BitOffset="0" Text="Von-Wert" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%409" Name="f%C%E1HighDpt13"    ParameterType="%AID%_PT-ValueDpt13"        Offset="4"  BitOffset="0" Text="Bis-Wert" Value="2147483647" />
@@ -258,7 +258,7 @@
                 <Parameter Id="%AID%_UP-%T%%CCC%042" Name="f%C%E2HighDpt9"     ParameterType="%AID%_PT-ValueDpt9"         Offset="12" BitOffset="0" Text="Bis-Wert" Value="670760" />
                 <Parameter Id="%AID%_UP-%T%%CCC%366" Name="f%C%E2LowDpt9Fix"   ParameterType="%AID%_PT-ValueDpt9"         Offset="8"  BitOffset="0" Text="Eingang 2 ist konstant" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%414" Name="f%C%E2LowDpt12"     ParameterType="%AID%_PT-ValueDpt12"        Offset="8"  BitOffset="0" Text="Von-Wert" Value="2147483648" />
-                <Parameter Id="%AID%_UP-%T%%CCC%415" Name="f%C%E2HighDpt12"    ParameterType="%AID%_PT-ValueDpt12"        Offset="12" BitOffset="0" Text="Bis-Wert" Value="4294967296" />
+                <Parameter Id="%AID%_UP-%T%%CCC%415" Name="f%C%E2HighDpt12"    ParameterType="%AID%_PT-ValueDpt12"        Offset="12" BitOffset="0" Text="Bis-Wert" Value="4294967295" />
                 <Parameter Id="%AID%_UP-%T%%CCC%416" Name="f%C%E2LowDpt12Fix"  ParameterType="%AID%_PT-ValueDpt12"        Offset="8"  BitOffset="0" Text="Eingang 2 ist konstant" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%417" Name="f%C%E2LowDpt13"     ParameterType="%AID%_PT-ValueDpt13"        Offset="8"  BitOffset="0" Text="Von-Wert" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%418" Name="f%C%E2HighDpt13"    ParameterType="%AID%_PT-ValueDpt13"        Offset="12" BitOffset="0" Text="Bis-Wert" Value="2147483647" />
@@ -461,7 +461,7 @@
                 <Parameter Id="%AID%_UP-%T%%CCC%401" Name="f%C%OOnDpt14"    ParameterType="%AID%_PT-ValueDpt14"    Offset="0" BitOffset="0" Text="    Wert für EIN senden als" Value="1" />
                 <Parameter Id="%AID%_UP-%T%%CCC%074" Name="f%C%OOnDpt16"    ParameterType="%AID%_PT-ValueText"     Offset="0" BitOffset="0" Text="    Wert für EIN senden als " Value="Ein" />
                 <Parameter Id="%AID%_UP-%T%%CCC%075" Name="f%C%OOnDpt17"    ParameterType="%AID%_PT-ValueSceneOut" Offset="0" BitOffset="0" Text="    Wert für EIN senden als " Value="2" />
-                <Parameter Id="%AID%_UP-%T%%CCC%076" Name="f%C%OOnRGB"      ParameterType="%AID%_PT-ValueColor"    Offset="0" BitOffset="0" Text="    Wert für EIN senden als (3-Byte-RGB)" Value="FFFFFF" />
+                <Parameter Id="%AID%_UP-%T%%CCC%076" Name="f%C%OOnRGB"      ParameterType="%AID%_PT-ValueColor"    Offset="0" BitOffset="0" Text="    Wert für EIN senden als (3-Byte-RGB)" Value="#FFFFFF" />
                 <Parameter Id="%AID%_UP-%T%%CCC%121" Name="f%C%OOnPAArea"   ParameterType="%AID%_PT-PALine"        Offset="0" BitOffset="0" Text="" Value="1" />
                 <Parameter Id="%AID%_UP-%T%%CCC%122" Name="f%C%OOnPALine"   ParameterType="%AID%_PT-PALine"        Offset="0" BitOffset="4" Text="" Value="1" />
                 <Parameter Id="%AID%_UP-%T%%CCC%123" Name="f%C%OOnPADevice" ParameterType="%AID%_PT-PADevice"      Offset="1" BitOffset="0" Text="" Value="1" />
@@ -490,7 +490,7 @@
                 <Parameter Id="%AID%_UP-%T%%CCC%404" Name="f%C%OOffDpt14"    ParameterType="%AID%_PT-ValueDpt14"    Offset="0" BitOffset="0" Text="    Wert für AUS senden als" Value="0" />
                 <Parameter Id="%AID%_UP-%T%%CCC%086" Name="f%C%OOffDpt16"    ParameterType="%AID%_PT-ValueText"     Offset="0" BitOffset="0" Text="    Wert für AUS senden als" Value="Aus" />
                 <Parameter Id="%AID%_UP-%T%%CCC%087" Name="f%C%OOffDpt17"    ParameterType="%AID%_PT-ValueSceneOut" Offset="0" BitOffset="0" Text="    Wert für AUS senden als " Value="1" />
-                <Parameter Id="%AID%_UP-%T%%CCC%088" Name="f%C%OOffRGB"      ParameterType="%AID%_PT-ValueColor"    Offset="0" BitOffset="0" Text="    Wert für AUS senden als (3-Byte-RGB)" Value="000000" />
+                <Parameter Id="%AID%_UP-%T%%CCC%088" Name="f%C%OOffRGB"      ParameterType="%AID%_PT-ValueColor"    Offset="0" BitOffset="0" Text="    Wert für AUS senden als (3-Byte-RGB)" Value="#000000" />
                 <Parameter Id="%AID%_UP-%T%%CCC%124" Name="f%C%OOffPAArea"   ParameterType="%AID%_PT-PALine"        Offset="0" BitOffset="0" Text="" Value="1" />
                 <Parameter Id="%AID%_UP-%T%%CCC%125" Name="f%C%OOffPALine"   ParameterType="%AID%_PT-PALine"        Offset="0" BitOffset="4" Text="" Value="1" />
                 <Parameter Id="%AID%_UP-%T%%CCC%126" Name="f%C%OOffPADevice" ParameterType="%AID%_PT-PADevice"      Offset="1" BitOffset="0" Text="" Value="1" />
