@@ -970,7 +970,7 @@
               <ParameterRef Id="%AID%_UP-%T%%CCC%404_R-%T%%CCC%40401" RefId="%AID%_UP-%T%%CCC%404" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%405_R-%T%%CCC%40501" RefId="%AID%_UP-%T%%CCC%405" Text="Von-Wert" Value="2147483648" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%405_R-%T%%CCC%40502" RefId="%AID%_UP-%T%%CCC%405" Text="Ausschalt-Wert" Value="300000" />
-              <ParameterRef Id="%AID%_UP-%T%%CCC%406_R-%T%%CCC%40601" RefId="%AID%_UP-%T%%CCC%406" Text="Bis-Wert" Value="4294967296" />
+              <ParameterRef Id="%AID%_UP-%T%%CCC%406_R-%T%%CCC%40601" RefId="%AID%_UP-%T%%CCC%406" Text="Bis-Wert" Value="4294967295" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%406_R-%T%%CCC%40602" RefId="%AID%_UP-%T%%CCC%406" Text="Einschalt-Wert" Value="600000" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%407_R-%T%%CCC%40701" RefId="%AID%_UP-%T%%CCC%407" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%408_R-%T%%CCC%40801" RefId="%AID%_UP-%T%%CCC%408" Text="Von-Wert" Value="0" />
@@ -985,7 +985,7 @@
               <ParameterRef Id="%AID%_UP-%T%%CCC%413_R-%T%%CCC%41301" RefId="%AID%_UP-%T%%CCC%413" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%414_R-%T%%CCC%41401" RefId="%AID%_UP-%T%%CCC%414" Text="Von-Wert" Value="2147483648" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%414_R-%T%%CCC%41402" RefId="%AID%_UP-%T%%CCC%414" Text="Ausschalt-Wert" Value="300000" />
-              <ParameterRef Id="%AID%_UP-%T%%CCC%415_R-%T%%CCC%41501" RefId="%AID%_UP-%T%%CCC%415" Text="Bis-Wert" Value="4294967296" />
+              <ParameterRef Id="%AID%_UP-%T%%CCC%415_R-%T%%CCC%41501" RefId="%AID%_UP-%T%%CCC%415" Text="Bis-Wert" Value="4294967295" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%415_R-%T%%CCC%41502" RefId="%AID%_UP-%T%%CCC%415" Text="Einschalt-Wert" Value="600000" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%416_R-%T%%CCC%41601" RefId="%AID%_UP-%T%%CCC%416" />
               <ParameterRef Id="%AID%_UP-%T%%CCC%417_R-%T%%CCC%41701" RefId="%AID%_UP-%T%%CCC%417" Text="Von-Wert" Value="0" />
