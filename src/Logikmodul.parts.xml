@@ -91,33 +91,6 @@
                       <ComObjectRefRef RefId="%AID%_O-%T%000007_R-%T%00000701" />
                     </when>
                   </choose>
-                  <!-- We implement here also led/buzzer lock KO -->
-                  <choose ParamRefId="%AID%_UP-%T%000036_R-%T%00003601">
-                    <when test="1">
-                      <!-- show lock KO for LED -->
-                      <ComObjectRefRef RefId="%AID%_O-%T%000008_R-%T%00000801" />
-                      <!-- show extra settings for LED-->
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="RGB-LED" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Damit die LED in korrekten Farben leuchtet, muss hier angegeben werden, welcher Treiberausgang mit welchem LED-Beinchen verbunden ist." />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Die Platine liegt so, dass von den 4 Lötpads für die LED das ganz linke +5V ist. Die folgenden 3 Lötpads sind A, B und C." />
-                      <ParameterRefRef RefId="%AID%_UP-%T%000151_R-%T%00015101" />
-                    </when>
-                  </choose>
-                  <choose ParamRefId="%AID%_UP-%T%000035_R-%T%00003501">
-                    <when test="1">
-                      <!-- show lock KO for Buzzer -->
-                      <ComObjectRefRef RefId="%AID%_O-%T%000009_R-%T%00000901" />
-                      <!-- show extra settings for Buzzer-->
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Buzzer" UIHint="Headline" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Die beim Buzzer verwendeten Frequenzen für leise, normal und laut können hier eingestellt werden" />
-                      <ParameterRefRef RefId="%AID%_UP-%T%000148_R-%T%00014801" />
-                      <ParameterRefRef RefId="%AID%_UP-%T%000149_R-%T%00014901" />
-                      <ParameterRefRef RefId="%AID%_UP-%T%000150_R-%T%00015001" />
-                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Der Buzzer kann nur 'AN' oder 'AUS'. Die Lautstärke wird durch Frequenz wählt, die niicht im optimalen Arbeitsbereich liegt. Die Standardwerte meinen also 'leise und tief', 'normal und hoch', 'laut und mittel'." />
-                    </when>
-                  </choose>
                 </ParameterBlock>
               </ParameterBlock>
             </ChannelIndependentBlock>
