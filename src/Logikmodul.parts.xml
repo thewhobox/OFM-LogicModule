@@ -74,20 +74,6 @@
                 <!-- RGB-LED installed? -->
                 <ParameterRefRef RefId="%AID%_UP-%T%000036_R-%T%00003601" />
               </ParameterBlock>
-              <ParameterBlock Id="%AID%_PB-2" Name="Hardware" Text="Logic: Hardware">
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Installierte Hardware" UIHint="Headline" />
-                <ParameterSeparator Id="%AID%_PS-11" Text="Im folgenden wird die verwendete bzw. installierte Hardware angegeben." />
-                <ParameterSeparator Id="%AID%_PS-12" Text="Die hier getroffenen Angaben beeinflussen das Verhalten der Applikation und der Firmware und müssen zur vorhandenen Hardware passen!" />
-                <!-- Buzzer installed? -->
-                <ParameterRefRef RefId="%AID%_UP-%T%000035_R-%T%00003502" />
-                <!-- RGB-LED installed? -->
-                <ParameterRefRef RefId="%AID%_UP-%T%000036_R-%T%00003602" />
-                <!-- move locally set values to global parameters -->
-                <!-- this is used for decoupling specific applications from global behaviour -->
-                <Assign TargetParamRefRef="%AID%_UP-1000035_R-00003501" SourceParamRefRef="%AID%_UP-1000035_R-00003502" />
-                <Assign TargetParamRefRef="%AID%_UP-1000036_R-00003601" SourceParamRefRef="%AID%_UP-1000036_R-00003602" />
-              </ParameterBlock>
               <ParameterBlock Id="%AID%_PB-3" Name="Diagnose" Text="Logik: Diagnose">
                 <!-- Expert screen: we allow definition of buzzer frequencies -->
                 <ParameterBlock Id="%AID%_PB-nnn" Name="LogicExtraSettings" Text="Experteneinstellungen">
