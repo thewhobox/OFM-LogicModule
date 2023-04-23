@@ -200,8 +200,14 @@ void Logic::processInputKo(GroupObject &iKo)
         LogicChannel *lChannel = mChannel[lKoLookup->channelIndex];
         lChannel->processInput(lKoLookup->ioIndex);
     }
+
+    
+    long min = LOG_KoOffset + LOG_KoKOfE1;
+    long max = LOG_KoOffset + LOG_KoKOfE1 + mNumChannels * LOG_KoBlockSize;
+
+
     if (iKo.asap() == LOG_KoTime) {
-        if (knx.paramByte(LOG_CombinedTimeDate) & LOG_CombinedTimeDateMask) {
+        if (ParamLOG_CombinedTimeDate) {
             KNXValue value = "";
 
             // first ensure we have a valid data-time content
@@ -234,7 +240,7 @@ void Logic::processInputKo(GroupObject &iKo)
                     struct tm lTmp = value;
                     sTimer.setDateTimeFromBus(&lTmp);
                     const bool lSummertime = raw[6] & DPT19_SUMMERTIME;
-                    if (((knx.paramByte(LOG_SummertimeAll) & LOG_SummertimeAllMask) >> LOG_SummertimeAllShift) == VAL_STIM_FROM_DPT19)
+                    if (ParamLOG_SummertimeAll == VAL_STIM_FROM_DPT19)
                         sTimer.setIsSummertime(lSummertime);
                 }
             }
@@ -283,6 +289,7 @@ void Logic::processInputKo(GroupObject &iKo)
         LogicChannel *lChannel = mChannel[lChannelId];
         lChannel->processInput(lIOIndex);
     }
+
 }
 
 char *Logic::initDiagnose(GroupObject &iKo)
@@ -441,9 +448,9 @@ void Logic::setup()
 #ifdef BUZZER_PIN
     pinMode(BUZZER_PIN, OUTPUT);
 #endif
-    bool lTimezoneSign = ParamLOG_TimezoneSign;
-    int8_t lTimezone = ParamLOG_TimezoneValue;
-    lTimezone = lTimezone * (lTimezoneSign ? -1 : 1);
+    //bool lTimezoneSign = ParamLOG_TimezoneSign;
+    int8_t lTimezone = ParamLOG_Timezone;
+    //lTimezone = lTimezone * (lTimezoneSign ? -1 : 1);
     bool lUseSummertime = (ParamLOG_SummertimeAll == VAL_STIM_FROM_INTERN);
     sTimer.setup(ParamLOG_Longitude, ParamLOG_Latitude, ParamLOG_Timezone, lUseSummertime, knx.paramInt(LOG_Neujahr)); //do not fetch just ParamLOG_Neujahr here, we need the whole bitfield
     // for TimerRestore we prepare all Timer channels

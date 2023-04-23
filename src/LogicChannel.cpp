@@ -492,7 +492,7 @@ LogicValue LogicChannel::getInputValue(uint8_t iIOIndex, uint8_t *eDpt)
 {
     // check for constant
     uint16_t lParamIndex = (iIOIndex == 1) ? LOG_fE1Convert : LOG_fE2Convert;
-    uint8_t lConvert = (getByteParam(lParamIndex) & LOG_fE1ConvertMask) >> LOG_fE1ConvertShift;
+    uint8_t lConvert = (getByteParam(lParamIndex) & LOG_fE1Convert_Mask) >> LOG_fE1Convert_Shift;
     lParamIndex = (iIOIndex == 1) ? LOG_fE1Dpt : LOG_fE2Dpt;
     *eDpt = getByteParam(lParamIndex);
     if (lConvert == VAL_InputConvert_Constant)
@@ -698,7 +698,7 @@ bool LogicChannel::isInputActive(uint8_t iIOIndex)
     if (lIsActive == 0)
     {
         // input might be also activated by a delta input converter, means from the other input
-        lIsActive = (getByteParam((iIOIndex == IO_Input2) ? LOG_fE1Convert : LOG_fE2Convert) >> LOG_fE1ConvertShift) & 1;
+        lIsActive = (getByteParam((iIOIndex == IO_Input2) ? LOG_fE1Convert : LOG_fE2Convert) >> LOG_fE1Convert_Shift) & 1;
     }
     return (lIsActive > 0);
 }
@@ -750,7 +750,7 @@ void LogicChannel::processInput(uint8_t iIOIndex)
     }
     // this input might also be used for delta conversion in the other input
     uint16_t lOtherParamBase = (iIOIndex == 2) ? LOG_fE1 : LOG_fE2;
-    uint8_t lConverter = getByteParam(lOtherParamBase) >> LOG_fE1ConvertShift;
+    uint8_t lConverter = getByteParam(lOtherParamBase) >> LOG_fE1Convert_Shift;
     if (lConverter & 1)
     {
         // delta conversion, we start convert for the other input
@@ -879,7 +879,7 @@ void LogicChannel::processConvertInput(uint8_t iIOIndex)
 {
     uint16_t lParamBase = (iIOIndex == 1) ? LOG_fE1 : LOG_fE2;
     uint16_t lParamLow = (iIOIndex == 1) ? LOG_fE1LowDelta : LOG_fE2LowDelta;
-    uint8_t lConvert = (getByteParam(lParamBase) & LOG_fE1ConvertMask) >> LOG_fE1ConvertShift;
+    uint8_t lConvert = ParamLOG_fE1Convert;
     bool lValueOut = 0;
     // get input value
     uint8_t lDpt;
@@ -2449,14 +2449,14 @@ bool LogicChannel::checkSunDegree(Timer &iTimer, uint8_t iSunInfo, uint8_t iTime
 void LogicChannel::startTimerRestoreState()
 {
     // check if current logic channel is a timer channel
-    uint8_t lLogicFunction = (getByteParam(LOG_fDisable) & LOG_fDisableMask) ? 0 : getByteParam(LOG_fLogic);
+    uint8_t lLogicFunction = ParamLOG_fDisable ? 0 : ParamLOG_fLogic;
     if (lLogicFunction == VAL_Logic_Timer)
     {
-        bool lShouldRestoreState = ((getByteParam(LOG_fTRestoreState) & LOG_fTRestoreStateMask) >> LOG_fTRestoreStateShift);
+        bool lShouldRestoreState = ((getByteParam(LOG_fTRestoreState) >> LOG_fTRestoreState_Shift) & LOG_fTRestoreState_Mask) ;
         if (lShouldRestoreState == 1)
         {
             // Timers with vacation handling cannot be restored
-            bool lIsUsingVacation = ((getByteParam(LOG_fTVacation) & LOG_fTVacationMask) >> LOG_fTVacationShift) <= VAL_Tim_Special_No;
+            bool lIsUsingVacation = ((getByteParam(LOG_fTVacation) >> LOG_fTVacation_Shift) & LOG_fTVacation_Mask) <= VAL_Tim_Special_No;
             if (lIsUsingVacation)
             {
                 pCurrentPipeline |= PIP_TIMER_RESTORE_STATE;
@@ -2476,7 +2476,7 @@ void LogicChannel::stopTimerRestoreState()
 // Restores the value for this timer, if the day fits
 void LogicChannel::processTimerRestoreState(TimerRestore &iTimer)
 {
-    bool lIsYearTimer = (getByteParam(LOG_fTYearDay) & LOG_fTYearDayMask);
+    bool lIsYearTimer = ParamLOG_fTYearDay;
     uint8_t lCountTimer = lIsYearTimer ? 4 : 8; // there are 4 year timer or 8 day timer
     bool lToday;                                // if it is a day timer lToday=true
     int16_t lResult = -1;
@@ -2506,7 +2506,7 @@ void LogicChannel::processTimerRestoreState(TimerRestore &iTimer)
     // vacation is not processed (always skipped)
 
     // holiday
-    uint8_t lHolidaySetting = (getByteParam(LOG_fTHoliday) & LOG_fTHolidayMask) >> LOG_fTHolidayShift;
+    uint8_t lHolidaySetting = ParamLOG_fTHoliday;
     if (lHolidaySetting == VAL_Tim_Special_No && (iTimer.holidayToday() > 0))
         lEvaluate = false;
     if (lHolidaySetting == VAL_Tim_Special_Skip || lHolidaySetting == VAL_Tim_Special_Sunday)
